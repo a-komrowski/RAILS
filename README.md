@@ -1,10 +1,10 @@
-# RAILS - Railway Infrastructure Image Analysis & Clustering System
+# RAILS - Railbed Analysis & Image Learning System
 
-A comprehensive machine learning pipeline for analyzing and clustering railway infrastructure images from multiple European transportation companies. This project performs unsupervised clustering analysis on center track images to identify patterns, infrastructure types, and tenant-specific characteristics.
+A comprehensive machine learning pipeline for analyzing and clustering railway railbed images from multiple European transportation companies. This project performs unsupervised clustering analysis on center track images to identify patterns, infrastructure types, and tenant-specific characteristics in railway bed conditions.
 
 ## 🚂 Project Overview
 
-The RAILS project is designed to analyze railway track images collected from various European public transportation operators. Using deep learning feature extraction and unsupervised clustering techniques, it automatically discovers patterns and groups similar infrastructure types without prior labeling.
+The RAILS (Railbed Analysis & Image Learning System) project is designed to analyze railway track bed images collected from various European public transportation operators. Using deep learning feature extraction and unsupervised clustering techniques, it automatically discovers patterns and groups similar railbed infrastructure types without prior labeling.
 
 ### Key Features
 
@@ -18,7 +18,7 @@ The RAILS project is designed to analyze railway track images collected from var
 
 ## 📊 Dataset Information
 
-The project works with railway center track images from the following transportation operators:
+The project works with railway center track bed images from the following transportation operators:
 
 | Tenant | Company | Region | Images Available |
 |--------|---------|--------|------------------|
@@ -31,13 +31,13 @@ The project works with railway center track images from the following transporta
 | RETM | Régie des Transports Métropolitains | France | ~65k |
 | VBZ | Verkehrsbetriebe Zürich | Switzerland | ~46k |
 
-**Total Dataset**: 250,000+ images across multiple infrastructure types and environmental conditions.
+**Total Dataset**: 250,000+ images across multiple railbed infrastructure types and environmental conditions.
 
 ## 🛠️ Architecture & Workflow
 
 ### 1. Data Acquisition (`download_c_images.ipynb`)
 - Connects to AWS S3 buckets using boto3
-- Downloads center track images based on tenant/SID ranges defined in `img_folders.json`
+- Downloads center track bed images based on tenant/SID ranges defined in `img_folders.json`
 - Applies sampling strategies to manage dataset size
 - Implements robust error handling and progress tracking
 - Renames files to flat structure: `{tenant}_{SID}_{filename}_C.png`
@@ -149,26 +149,30 @@ jupyter notebook clustering_analysis.ipynb
 
 ### Clustering Insights
 
-The analysis typically reveals several distinct cluster types:
+The analysis typically reveals several distinct cluster types related to railbed conditions:
 
-1. **Infrastructure Types**:
+1. **Railbed Types**:
    - Ballasted tracks (gravel/stone base)
    - Embedded tracks (asphalt/concrete)
-   - Different rail configurations
+   - Different rail bed configurations
+   - Surface conditions and wear patterns
 
 2. **Environmental Conditions**:
    - Lighting variations (day/night/artificial)
-   - Weather conditions
-   - Seasonal differences
+   - Weather conditions and seasonal effects
+   - Surface moisture and debris
+   - Vegetation growth patterns
 
-3. **Urban vs. Rural**:
+3. **Urban vs. Rural Infrastructure**:
    - City center embedded tracks
    - Suburban ballasted tracks
    - Different maintenance standards
+   - Age and condition variations
 
-4. **Tenant-Specific Features**:
+4. **Tenant-Specific Characteristics**:
    - Company-specific infrastructure standards
    - Regional construction differences
+   - Maintenance protocols and frequencies
    - Equipment and signaling variations
 
 ### Output Files
@@ -181,16 +185,16 @@ The analysis typically reveals several distinct cluster types:
 ## 🎯 Applications
 
 ### Research Applications
-- **Infrastructure Classification**: Automated categorization of track types
-- **Maintenance Planning**: Identify infrastructure conditions requiring attention
+- **Railbed Classification**: Automated categorization of track bed types and conditions
+- **Maintenance Planning**: Identify railbed conditions requiring attention or intervention
 - **Standardization Analysis**: Compare infrastructure standards across operators
-- **Quality Assessment**: Detect anomalies or unusual configurations
+- **Quality Assessment**: Detect anomalies or unusual railbed configurations
 
 ### Practical Applications
-- **Asset Management**: Inventory and categorize existing infrastructure
+- **Asset Management**: Inventory and categorize existing railbed infrastructure
 - **Predictive Maintenance**: Identify patterns associated with maintenance needs
 - **Construction Planning**: Understand regional infrastructure variations
-- **Regulatory Compliance**: Ensure infrastructure meets safety standards
+- **Safety Assessment**: Monitor railbed conditions for safety compliance
 
 ## 🧠 Technical Details
 
@@ -214,10 +218,11 @@ The analysis typically reveals several distinct cluster types:
 ## 📈 Future Enhancements
 
 - **Supervised Learning**: Use cluster labels for classification model training
-- **Real-time Processing**: Stream processing for live image analysis
+- **Real-time Processing**: Stream processing for live railbed condition analysis
 - **Multi-modal Analysis**: Incorporate GPS, sensor data, and metadata
-- **Anomaly Detection**: Identify unusual or dangerous track conditions
-- **Temporal Analysis**: Track infrastructure changes over time
+- **Anomaly Detection**: Identify unusual or potentially dangerous railbed conditions
+- **Temporal Analysis**: Track railbed infrastructure changes over time
+- **Condition Scoring**: Develop automated railbed quality assessment metrics
 
 ## 🤝 Contributing
 
@@ -233,7 +238,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
-- European transportation operators for providing image data
+- European transportation operators for providing railbed image data
 - TensorFlow/Keras team for deep learning frameworks
 - scikit-learn contributors for clustering algorithms
 - AWS for cloud storage infrastructure
@@ -244,4 +249,4 @@ For questions, suggestions, or collaboration opportunities, please open an issue
 
 ---
 
-**Note**: This project is designed for research and analysis purposes. Ensure compliance with data privacy regulations and operator agreements when working with transportation infrastructure data.
+**Note**: This project is designed for research and analysis purposes focused on railbed condition assessment. Ensure compliance with data privacy regulations and operator agreements when working with transportation infrastructure data.
