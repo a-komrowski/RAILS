@@ -2,5 +2,5 @@
 *.pyc
 downloads/
 datasets/
-results/
+results*/
 .DS_Store
