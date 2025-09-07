@@ -4,7 +4,7 @@ from keras.optimizers import Adam
 from keras.layers import Flatten, Dense, Dropout, Input
 from keras import Model
 
-class MultiClassResNet_Trackbed:
+class PT_MultiClassResNet50_Trackbed:
     def __init__(self):
         self.n_layers = 1
         self.t_height = 224
@@ -15,16 +15,16 @@ class MultiClassResNet_Trackbed:
         input_layer = Input(shape=(self.t_height, self.t_width, self.t_depth))
         x = input_layer
 
-        # Build base model without pretrained weights
+        # Build base model with pretrained weights
         base_model = ResNet50V2(
             include_top=False,
-            weights=None,
+            weights='imagenet',
             input_shape=(self.t_height, self.t_width, self.t_depth),
             pooling='avg'
         )
 
-        # Base model is trainable (no freezing)
-        base_model.trainable = True
+        # Freeze the base model layers
+        base_model.trainable = False
 
         # Connect input directly to the base model
         x = base_model(x)

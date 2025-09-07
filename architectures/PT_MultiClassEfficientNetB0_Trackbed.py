@@ -4,7 +4,7 @@ from keras.optimizers import Adam
 from keras.layers import Flatten, Dense, Dropout, Input
 from keras import Model
 
-class PT_MultiClassEfficientNet_Trackbed:
+class PT_MultiClassEfficientNetB0_Trackbed:
     def __init__(self):
         self.n_layers = 1
         self.t_height = 224
