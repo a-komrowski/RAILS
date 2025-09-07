@@ -4,3 +4,17 @@ downloads/
 datasets/
 results*/
 .DS_Store
+*.json
+*.csv
+*.zip
+*.txt
+*.keras
+*.deb
+model_comparison_plots*
+outputs_trackbed*
+experiment_results*
+clustering_report_old*
+clustering_report_k4-8*
+all_results*
+.venv*
+__pycache__*
